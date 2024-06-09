@@ -1,0 +1,102 @@
+{
+  "Name": "Assessment Example Sequence",
+  "StartStepId": "get_camera_names",
+  "Steps": [
+    {
+      "StepType": 1,
+      "StepId": "get_camera_names",
+      "Function": "Cameras/GetCameraNames",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "enable_axis_system"
+        }
+      ]
+    },
+    {
+      "StepType": 5,
+      "StepId": "Done"
+    },
+    {
+      "StepType": 1,
+      "StepId": "enable_axis_system",
+      "Function": "Gantry/PowerOn",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "move_to_bsc"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "Done"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "move_to_bsc",
+      "Function": "Gantry/MoveSafeHeight",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "enable_bsc_light"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "enable_bsc_light",
+      "Function": "BSC/Light_SetOn",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "take_image"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "take_image",
+      "Function": "Cameras/TakeAndSaveImage",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "disable_bsc_light"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "disable_bsc_light",
+      "Function": "BSC/Light_SetOff",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "move_up"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "move_up",
+      "Function": "PBBs/RetractTools",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "disable_axis_system"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "disable_axis_system",
+      "Function": "Gantry/PowerOff",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    }
+  ]
+}

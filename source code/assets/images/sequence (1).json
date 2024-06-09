@@ -1,0 +1,40 @@
+{
+  "Name": "Assessment Example Sequence",
+  "StartStepId": "get_camera_names",
+  "Steps": [
+    {
+      "StepType": 1,
+      "StepId": "get_camera_names",
+      "Function": "Cameras/GetCameraNames",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "disable_axis_system"
+        }
+      ]
+    },
+    {
+      "StepType": 5,
+      "StepId": "Done"
+    },
+    {
+      "StepType": 1,
+      "StepId": "disable_axis_system",
+      "Function": "Gantry/PowerOff",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "Done"
+        }
+      ]
+    }
+  ]
+}

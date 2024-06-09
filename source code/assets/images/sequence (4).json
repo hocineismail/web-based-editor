@@ -1,0 +1,21 @@
+{
+  "Name": "Ismail Hocine",
+  "StartStepId": "root_1717870532190",
+  "Steps": [
+    {
+      "StepType": 5,
+      "StepId": "Done"
+    },
+    {
+      "StepType": 1,
+      "StepId": "root_1717870532190",
+      "Function": "GantryAxisZ/MoveAbsolute",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    }
+  ]
+}

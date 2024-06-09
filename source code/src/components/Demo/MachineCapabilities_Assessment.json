@@ -1,0 +1,232 @@
+{
+  "GantryAxisX": {
+    "Functions": {
+      "GetPosition": {
+        "FunctionDescription": {
+          "Name": "Get Axis Position",
+          "Description": "Gets the actual Position of the Axis"
+        }
+      },
+      "MoveAbsolute": {
+        "FunctionDescription": {
+          "Name": "MoveAbsolute",
+          "Description": "Moves to an absolute position"
+        }
+      },
+      "MoveRelative": {
+        "FunctionDescription": {
+          "Name": "MoveRelative",
+          "Description": "Moves to an relative position"
+        }
+      },
+      "Reset": {
+        "FunctionDescription": {
+          "Name": "Reset",
+          "Description": "Reset the Axis in case of an error"
+        }
+      },
+      "PowerOn": {
+        "FunctionDescription": {
+          "Name": "Power On",
+          "Description": "Enables the Axis"
+        }
+      },
+      "PowerOff": {
+        "FunctionDescription": {
+          "Name": "Power Off",
+          "Description": "Disables the Axis"
+        }
+      }
+    }
+  },
+  "GantryAxisY": {
+    "Functions": {
+      "GetPosition": {
+        "FunctionDescription": {
+          "Name": "Get Axis Position",
+          "Description": "Gets the actual Position of the Axis"
+        }
+      },
+      "MoveAbsolute": {
+        "FunctionDescription": {
+          "Name": "MoveAbsolute",
+          "Description": "Moves to an absolute position"
+        }
+      },
+      "MoveRelative": {
+        "FunctionDescription": {
+          "Name": "MoveRelative",
+          "Description": "Moves to an relative position"
+        }
+      },
+      "Reset": {
+        "FunctionDescription": {
+          "Name": "Reset",
+          "Description": "Reset the Axis in case of an error"
+        }
+      },
+      "PowerOn": {
+        "FunctionDescription": {
+          "Name": "Power On",
+          "Description": "Enables the Axis"
+        }
+      },
+      "PowerOff": {
+        "FunctionDescription": {
+          "Name": "Power Off",
+          "Description": "Disables the Axis"
+        }
+      }
+    }
+  },
+  "GantryAxisZ": {
+    "Functions": {
+      "GetPosition": {
+        "FunctionDescription": {
+          "Name": "Get Axis Position",
+          "Description": "Gets the actual Position of the Axis"
+        }
+      },
+      "MoveAbsolute": {
+        "FunctionDescription": {
+          "Name": "MoveAbsolute",
+          "Description": "Moves to an absolute position"
+        }
+      },
+      "MoveRelative": {
+        "FunctionDescription": {
+          "Name": "MoveRelative",
+          "Description": "Moves to an relative position"
+        }
+      },
+      "Reset": {
+        "FunctionDescription": {
+          "Name": "Reset",
+          "Description": "Reset the Axis in case of an error"
+        }
+      },
+      "PowerOn": {
+        "FunctionDescription": {
+          "Name": "Power On",
+          "Description": "Enables the Axis"
+        }
+      },
+      "PowerOff": {
+        "FunctionDescription": {
+          "Name": "Power Off",
+          "Description": "Disables the Axis"
+        }
+      }
+    }
+  },
+  "Gantry": {
+    "Functions": {
+      "PowerOn": {
+        "FunctionDescription": {
+          "Name": "Power Gantry On",
+          "Description": "Enables the Axes System"
+        }
+      },
+      "PowerOff": {
+        "FunctionDescription": {
+          "Name": "Power Gantry On",
+          "Description": "Enables the Axes System"
+        }
+      },
+      "MoveLinear": {
+        "FunctionDescription": {
+          "Name": "Move XYZ Linear",
+          "Description": "XYZ Axes System is moved on a line from current Position to Target Position"
+        }
+      },
+      "MoveSafeHeight": {
+        "FunctionDescription": {
+          "Name": "Move XYZ Linear",
+          "Description": "XYZ Axes System is moved on a line from actual Position to Target Position"
+        }
+      }
+    }
+  },
+  "VGU": {
+    "Functions": {
+      "Grip": {
+        "FunctionDescription": {
+          "Name": "Grip",
+          "Description": "Enables the Gripper"
+        }
+      },
+      "Release": {
+        "FunctionDescription": {
+          "Name": "Release",
+          "Description": "Disables the Gripper"
+        }
+      }
+    }
+  },
+  "BSC": {
+    "Functions": {
+      "Light_SetOn": {
+        "FunctionDescription": {
+          "Name": "Light On",
+          "Description": "Enables the Light of the BSC-Module"
+        }
+      },
+      "Light_SetOff": {
+        "FunctionDescription": {
+          "Name": "Light Off",
+          "Description": "Disables the Light of the BSC-Module"
+        }
+      }
+    }
+  },
+  "PBBs": {
+    "Functions": {
+      "RetractTools": {
+        "FunctionDescription": {
+          "Name": "Retract Tools",
+          "Description": "Moves all tools up to a safe height"
+        }
+      },
+      "PickUp": {
+        "FunctionDescription": {
+          "Name": "PickUp",
+          "Description": "Moves to a certain position and grips the object"
+        }
+      },
+      "Place": {
+        "FunctionDescription": {
+          "Name": "Place",
+          "Description": "Moves to a certain position and releases the object"
+        }
+      }
+    }
+  },
+  "Cameras": {
+    "Functions": {
+      "GetExposureTime": {
+        "FunctionDescription": {
+          "Name": "GetExposureTime",
+          "Description": "Gets the Exposure Time of the Camera"
+        }
+      },
+      "SetExposureTime": {
+        "FunctionDescription": {
+          "Name": "SetExposureTime",
+          "Description": "Sets the Exposure Time of the Camera"
+        }
+      },
+      "TakeAndSaveImage": {
+        "FunctionDescription": {
+          "Name": "TakeAndSaveImage",
+          "Description": "Takes an Image and saves it to a certain location"
+        }
+      },
+      "GetCameraNames": {
+        "FunctionDescription": {
+          "Name": "GetCameraNames",
+          "Description": "Returns a list of all available cameras"
+        }
+      }
+    }
+  }
+}

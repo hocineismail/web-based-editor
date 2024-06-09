@@ -1,0 +1,63 @@
+{
+  "Name": "Zack bou terma",
+  "StartStep": "81a8dd31-e9e0-410f-9ca0-fd0981691f8d",
+  "Steps": [
+    {
+      "StepType": 5,
+      "StepId": "Done"
+    },
+    {
+      "StepType": 1,
+      "StepId": "root_1717716475444",
+      "Function": "BSC/Light_SetOn",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "step_1717716552958"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "step_1717716625861"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716552958",
+      "Function": "GantryAxisY/MoveAbsolute",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716625861",
+      "Function": "GantryAxisY/MoveAbsolute",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "step_1717716811549"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716811549",
+      "Function": "VGU/Release",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    }
+  ],
+  "StartStepId": "root_1717716475444"
+}

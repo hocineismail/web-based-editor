@@ -1,0 +1,73 @@
+{
+  "Name": "Assessment Example Sequence",
+  "StartStepId": "get_camera_names",
+  "Steps": [
+    {
+      "StepType": 1,
+      "StepId": "get_camera_names",
+      "Function": "Cameras/GetCameraNames",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "step_1717716282101"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "Done"
+        }
+      ]
+    },
+    {
+      "StepType": 5,
+      "StepId": "Done"
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716282101",
+      "Function": "Gantry/PowerOff",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "step_1717716303309"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716303309",
+      "Function": "GantryAxisY/MoveAbsolute",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "step_1717716327565"
+        },
+        {
+          "result": "Failed",
+          "NextStepId": "step_1717716313062"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716313062",
+      "Function": "PBBs/Place",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    },
+    {
+      "StepType": 1,
+      "StepId": "step_1717716327565",
+      "Function": "GantryAxisY/MoveRelative",
+      "Transitions": [
+        {
+          "result": "Succeeded",
+          "NextStepId": "Done"
+        }
+      ]
+    }
+  ]
+}
