@@ -1,3 +1,4 @@
+import { FAILED } from "@/constants/constants";
 import { MachineCapabilities, Transition } from "./";
 import { Sequence } from "./sequence";
 import { Node, Edge } from "reactflow";
@@ -22,6 +23,7 @@ export interface AppState {
     show: boolean;
     root: boolean | null;
     parentId: string | null;
+    Function: string | null;
     result: "Failed" | "Succeeded" | null;
   };
 }
@@ -29,6 +31,7 @@ export interface AppState {
 export interface ShowModal {
   parentId?: string | null;
   result?: "Failed" | "Succeeded" | null;
+  Function?: string | null;
   root?: boolean | null;
 }
 

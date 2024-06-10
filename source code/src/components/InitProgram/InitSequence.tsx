@@ -33,6 +33,10 @@ export function InitSequence<T>({ getContent }: Props<T>): React.ReactElement {
   };
 
   const handleInitProgam = () => {
+    if (!name.length) {
+      alert("Please enter the name of porgram");
+      return;
+    }
     const StartStepId = `root_${Date.now()}`;
     const newStep: Sequence = {
       Name: name,
@@ -62,12 +66,12 @@ export function InitSequence<T>({ getContent }: Props<T>): React.ReactElement {
           className="rc-input"
           name="name"
           value={name}
+          placeholder="Program name, example. interview tasks "
           onChange={handleChangeName}
         />{" "}
         <br />
-        <Button onClick={() => handleInitProgam()}>
-          {" "}
-          Create Empty Sequence
+        <Button onClick={() => handleInitProgam()} disabled={!name.length}>
+          Create Sequence
         </Button>
       </Col>
       <hr />

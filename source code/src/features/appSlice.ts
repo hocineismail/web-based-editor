@@ -8,6 +8,7 @@ const initialState: AppState = {
     parentId: null,
     result: null,
     root: null,
+    Function: null,
   },
 };
 
@@ -21,6 +22,7 @@ const appSlice = createSlice({
       state.modal.parentId = action.payload.parentId || null;
       state.modal.result = action.payload.result || null;
       state.modal.root = action.payload.root || null;
+      state.modal.Function = action.payload.Function || null;
     },
 
     closeModal: (state) => {

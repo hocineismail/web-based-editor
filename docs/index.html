@@ -1,59 +1,105 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>web-based-editor - v0.1.0</title><meta name="description" content="Documentation for web-based-editor"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">web-based-editor - v0.1.0</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>web-based-editor - v0.1.0</h2></div><div class="tsd-panel tsd-typography"><a id="md:task" class="tsd-anchor"></a><h1><a href="#md:task">Task</a></h1><p>This project is built using Create React App, Redux, and styled-components, React Bootstrap. It includes a flow diagram to manage sequences and capabilities for a machine.</p>
-<a id="md:getting-started" class="tsd-anchor"></a><h2><a href="#md:getting-started">Getting Started</a></h2><a id="md:prerequisites" class="tsd-anchor"></a><h3><a href="#md:prerequisites">Prerequisites</a></h3><a id="md:✔️-pre-requisites" class="tsd-anchor"></a><h1><a href="#md:✔️-pre-requisites">✔️ Pre-requisites</a></h1><ul>
-<li>Install <a href="https://nodejs.org/en/">Node.js</a></li>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>web-based-editor - v0.1.0</title><meta name="description" content="Documentation for web-based-editor"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">web-based-editor - v0.1.0</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>web-based-editor - v0.1.0</h2></div><div class="tsd-panel tsd-typography"><p>English version see below</p>
+<a id="md:einleitung" class="tsd-anchor"></a><h3><a href="#md:einleitung">Einleitung</a></h3><p>Um unseren Kunden zu ermöglichen unsere Maschinen ohne Programmierkenntnisse zu &quot;programmieren&quot;, möchten wir einen webbasierten Editor erstellen, in dem der Kunde einzelne Prozessschritte anlegen kann, auswählt welche Funktion jeweils ausgeführt werden soll und die Schritte zu einer Sequenz aneinanderreihen kann.
+Welche Funktionen die Maschine beherrscht, ist in einer separaten json-Datei festgelegt: <code>MachineCapabilities</code>. Die einzelnen Funktionen sind gruppiert zu &quot;Modulen&quot; wie z.B. <code>GantryAxisX</code>, <code>VGU</code> oder <code>Cameras</code>. Eine Funktion wird identifiziert als <code>Modulname/Funktionsname</code> also z.B. <code>GantryAxisX/GetPosition</code>. Diese Datei zu erstellen oder zu bearbeiten ist nicht Teil dieser Aufgabe.
+Je nachdem, ob ein Schritt erfolgreich war oder nicht, soll ein anderer Nachfolgeschritt gewählt werden können. Diese werden in der json-Datei unter <code>Transitions</code> festgelegt. Das <code>result</code> ist entweder <code>Failed</code> oder <code>Succeeded</code>
+Die Sequenz endet damit, dass ein spezieller Prozessschritt <code>Done</code>aufgerufen wird. Er soll an seinem <code>StepType</code> <code>5</code> erkennbar sein.</p>
+<a id="md:zur-verfügung-gestellt-werden" class="tsd-anchor"></a><h3><a href="#md:zur-verfügung-gestellt-werden">Zur Verfügung gestellt werden</a></h3><ul>
+<li>Beispielsequenz <code>sequence_assessment.json</code></li>
+<li>Datei mit verfügbaren Funktionen der Maschine <code>MachineCapabilities_Assessment.json</code></li>
+<li>Datei <code>interfaces.ts</code>, die beschreibt welche Datenstrukturen in den beiden zuvor genannten json-Dateien erwartet werden</li>
 </ul>
-<a id="md:features" class="tsd-anchor"></a><h1><a href="#md:features">Features:</a></h1><ol>
-<li><strong>Technology Stack:</strong><ul>
-<li><input checked="" disabled="" type="checkbox"> React</li>
-<li><input checked="" disabled="" type="checkbox"> TypeScript</li>
-<li><input checked="" disabled="" type="checkbox"> Redux</li>
+<a id="md:workflow-des-users" class="tsd-anchor"></a><h3><a href="#md:workflow-des-users">Workflow des Users</a></h3><ol>
+<li>Erstelle eine neue leere Sequenz<ul>
+<li>Diese kann bereits einen <code>Done</code>-Schritt enthalten</li>
 </ul>
 </li>
+<li>Füge einen einen Prozessschritt hinzu</li>
+<li>Wähle die auszuführende Funktion aus</li>
+<li>Füge weitere Prozessschritt hinzu und wähle die zugehörige Funktion aus</li>
+<li>Lege für jeden Prozessschritt fest was im Erfolgsfall und optional auch was im Fehlerfall als nächstes ausgeführt werden soll.</li>
+</ol>
+<a id="md:abzudeckende-use-cases" class="tsd-anchor"></a><h3><a href="#md:abzudeckende-use-cases">Abzudeckende Use-Cases</a></h3><p>Der Editor soll hierzu in der Lage sein:</p>
+<ul>
+<li>Laden der <code>MachineCapabilities</code>-Datei</li>
+<li>Laden einer vorhandenen Sequenz aus einer json-Datei wie <code>sequence_assessment.json</code></li>
+<li>Erstellen einer neuen, leeren Sequenz</li>
+<li>Speichern (herunterladen) einer Sequenz als json-Datei</li>
+<li>Anzeigen aller Prozessschritte einer Sequenz</li>
+<li>Neuen Schritt hinzufügen</li>
+<li>Schritt löschen</li>
+<li>Auswählen welche Funktion in einem Schritt ausgeführt werden soll</li>
+<li>Nachfolger von einem Schritt bearbeiten<ul>
+<li>Nachfolgeschritt für <code>Failed</code> auswählen</li>
+<li>Nachfolgeschritt für <code>Succeeded</code> auswählen</li>
+</ul>
+</li>
+</ul>
+<a id="md:randbedingungen" class="tsd-anchor"></a><h3><a href="#md:randbedingungen">Randbedingungen</a></h3><ul>
+<li>Programmiersprache(n) und Frameworks können frei gewählt werden</li>
+</ul>
+<a id="md:deliverables" class="tsd-anchor"></a><h3><a href="#md:deliverables">Deliverables</a></h3><ul>
+<li>Lauffähige HTML-Datei(en), mit denen wir den Editor ohne weiteres Tooling im Browser öffnen können.</li>
+<li>Source Code</li>
+<li>Sofern vorhanden: weitere Unterlagen aus der Entwicklung wie Textdokumente, Diagramme oder Zeichnungen.</li>
+</ul>
+<a id="md:bewertung" class="tsd-anchor"></a><h3><a href="#md:bewertung">Bewertung</a></h3><ul>
+<li>Es soll nicht nur um die Umsetzung gehen, sondern auch darum wie vorgegangen wurde oder worauf besonders geachtet wurde.</li>
+<li>Rückfragen des Bewerbers sind ebenfalls gern gesehen, da sie auch etwas über die Arbeitsweise aussagen.</li>
+<li>In einem eventuell folgenden Vorstellungsgespräch würden wir die Lösung auch als Diskussionsgrundlage verwenden.</li>
+</ul>
+<a id="md:english-version" class="tsd-anchor"></a><h1><a href="#md:english-version">English Version</a></h1><a id="md:introduction" class="tsd-anchor"></a><h3><a href="#md:introduction">Introduction</a></h3><p>In order to enable our customers to “program” our machines without programming knowledge,
+we would like to create a web-based editor in which the customer
+can create individual process steps, select which function is to be executed
+in each step and put the steps together to form a sequence.</p>
+<p>Which functions the machine can perform is defined in a separate json file: <code>MachineCapabilities</code>.
+The individual functions are grouped into “modules” such as <code>GantryAxisX</code>, <code>VGU</code> or <code>Cameras</code>.
+A function is identified as &#39;Module name/Function name&#39;, e.g. &#39;GantryAxisX/GetPosition&#39;.
+Creating or editing this file is not part of this task.</p>
+<p>Depending on whether a step was successful or not, it should be possible to select a different
+subsequent step. These are defined in the json file under <code>Transitions</code>. The <code>result</code> is either <code>Failed</code> or <code>Succeeded</code>
+The sequence ends with a special process step <code>Done</code> being called. It should be recognizable by its <code>StepType</code> <code>5</code>.</p>
+<a id="md:the-following-are-provided" class="tsd-anchor"></a><h3><a href="#md:the-following-are-provided">The following are provided</a></h3><ul>
+<li>Example sequence <code>sequence_assessment.json</code></li>
+<li>File with available functions of the machine <code>MachineCapabilities_Assessment.json</code>.</li>
+<li>File <code>interfaces.ts</code>, which describes which data structures are expected in the two json files mentioned above</li>
+</ul>
+<a id="md:workflow-of-the-user" class="tsd-anchor"></a><h3><a href="#md:workflow-of-the-user">Workflow of the user</a></h3><ol>
+<li>create a new empty sequence<ul>
+<li>this can already contain a &#39;Done&#39; step</li>
+</ul>
+</li>
+<li>add a process step</li>
+<li>select the function to be executed</li>
+<li>add further process steps and select the associated function</li>
+<li>specify for each process step what should be executed next in the event of success and optionally also what should be executed next in the event of an error.</li>
 </ol>
 <a id="md:use-cases-to-be-covered" class="tsd-anchor"></a><h3><a href="#md:use-cases-to-be-covered">Use cases to be covered</a></h3><p>The editor should be able to do this:</p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> Load the <code>MachineCapabilities</code> file</li>
-<li><input checked="" disabled="" type="checkbox"> Load an existing sequence from a json file like <code>sequence_assessment.json</code></li>
-<li><input checked="" disabled="" type="checkbox"> Create a new, empty sequence</li>
-<li><input checked="" disabled="" type="checkbox"> Save (download) a sequence as a json file</li>
-<li><input checked="" disabled="" type="checkbox"> Display all process steps of a sequence</li>
-<li><input checked="" disabled="" type="checkbox"> Add a new step</li>
-<li><input checked="" disabled="" type="checkbox"> Delete step</li>
-<li><input checked="" disabled="" type="checkbox"> Select which function is to be executed in a step</li>
-<li><input checked="" disabled="" type="checkbox"> Edit the successor of a step</li>
-<li><input checked="" disabled="" type="checkbox"> Select successor step for `Failed</li>
-<li><input checked="" disabled="" type="checkbox"> Select successor step for `Succeeded
-To run program, run the following command.</li>
-</ul>
-<a id="md:setup-and-usage" class="tsd-anchor"></a><h1><a href="#md:setup-and-usage">Setup and Usage</a></h1><ol>
-<li>Clone the repository: <code>git clone https://github.com/hocineismail/challenge-cities.git</code></li>
-</ol>
-<a id="md:🔨-running-code" class="tsd-anchor"></a><h2><a href="#md:🔨-running-code">🔨 Running Code</a></h2><p>To run the program, execute the following commands:</p>
-<ol>
-<li><p>Run Code Source: Use the terminal to execute the following commands:</p>
-<ul>
-<li>Navigate to the &quot;task&quot; directory where the frontend code is located using <code>cd task</code>.</li>
-<li>Install the dependencies for the React application using <code>npm install</code> or <code>yarn install</code>.</li>
-<li>Start the application using <code>npm start</code> or <code>yarn start</code>.</li>
+<li>Load the <code>MachineCapabilities</code> file</li>
+<li>Load an existing sequence from a json file like <code>sequence_assessment.json</code></li>
+<li>Create a new, empty sequence</li>
+<li>Save (download) a sequence as a json file</li>
+<li>Display all process steps of a sequence</li>
+<li>Add a new step</li>
+<li>Delete step</li>
+<li>Select which function is to be executed in a step</li>
+<li>Edit the successor of a step<ul>
+<li>Select successor step for `Failed</li>
+<li>Select successor step for `Succeeded</li>
 </ul>
 </li>
-<li><p>Open Executable HTML:</p>
-<ul>
-<li>Navigate to the <code>build</code> folder and open <code>index.html</code> in a web browser.</li>
 </ul>
-</li>
-<li><p>View Generated Documentation:</p>
-<ul>
-<li>Navigate to the <code>docs</code> folder and open <code>index.html</code> in a web browser.</li>
+<a id="md:boundary-conditions" class="tsd-anchor"></a><h3><a href="#md:boundary-conditions">Boundary conditions</a></h3><ul>
+<li>Programming language(s) and frameworks can be chosen freely</li>
 </ul>
-</li>
-</ol>
-<a id="md:pages" class="tsd-anchor"></a><h2><a href="#md:pages">Pages</a></h2><ul>
-<li><strong><a href="http://localhost:3000/">http://localhost:3000/</a></strong>: Home page that contains the machine</li>
+<a id="md:deliverables-1" class="tsd-anchor"></a><h3><a href="#md:deliverables-1">Deliverables</a></h3><ul>
+<li>Executable HTML file(s) with which we can open the editor in the browser without further tooling.</li>
+<li>Source code</li>
+<li>If available: further documents from the development such as text documents, diagrams or drawings.</li>
 </ul>
-<a id="md:directory-hierarchy-" class="tsd-anchor"></a><h2><a href="#md:directory-hierarchy-">Directory Hierarchy <a id="strecture"></a></a></h2><pre><code><span class="hl-0">|—— </span><span class="hl-1">public</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">index</span><span class="hl-0">.</span><span class="hl-1">html</span><br/><span class="hl-0">|—— </span><span class="hl-1">src</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">assets</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">components</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">Cards</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">NodeCard</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">commun</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">Box</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">Divider</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">Image</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">Typography</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">Demo</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">LoadMachineCapalities</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">sequence_assessment</span><span class="hl-0">.</span><span class="hl-1">json</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">MachineCapabilities_Assessment</span><span class="hl-0">.</span><span class="hl-1">json</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">fileSteps</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">FileSteps</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">FlowSteps</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">FlowSteps</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">Header</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">Header</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">InitProgram</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">InitMachineCapabilities</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">InitProgram</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">InitSequence</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">SaveFile</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">SaveFile</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">Step</span><br/><span class="hl-0">|            |—— </span><span class="hl-1">NextStep</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">index</span><span class="hl-0">.</span><span class="hl-1">html</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">styles</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">features</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">appSlice</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">capabilitiesSlice</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">sequenceSlice</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">pages</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">Home</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">types</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">index</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">state</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">sequence</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">machimeCapabilities</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">utils</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">deleteStepAndChildren</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">parseSteps</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">step</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|        |—— </span><span class="hl-1">validation</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">App</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">App</span><span class="hl-0">.</span><span class="hl-1">css</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">index</span><span class="hl-0">.</span><span class="hl-1">tsx</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">index</span><span class="hl-0">.</span><span class="hl-1">css</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">store</span><span class="hl-0">.</span><span class="hl-1">ts</span><br/><span class="hl-0">|    |—— </span><span class="hl-1">style</span><span class="hl-0">.</span><span class="hl-1">css</span><br/><span class="hl-0">|—— .</span><span class="hl-1">gitignore</span><br/><span class="hl-0">|—— </span><span class="hl-2">README</span><span class="hl-0">.</span><span class="hl-1">md</span><br/><span class="hl-0">|—— </span><span class="hl-1">package</span><span class="hl-0">.</span><span class="hl-1">json</span><br/><span class="hl-0">|—— </span><span class="hl-1">tsconfig</span><span class="hl-0">.</span><span class="hl-1">json</span><br/><span class="hl-0">|—— </span><span class="hl-1">typedoc</span><span class="hl-0">.</span><span class="hl-1">json</span>
-</code><button>Copy</button></pre>
-<a id="md:author" class="tsd-anchor"></a><h2><a href="#md:author">Author</a></h2><ul>
-<li><a href="https://github.com/hocineismail">@Ismail Hocine</a></li>
+<a id="md:evaluation" class="tsd-anchor"></a><h3><a href="#md:evaluation">Evaluation</a></h3><ul>
+<li>It should not only be about the implementation, but also about how it was done or what special attention was paid to.</li>
+<li>Questions from the applicant are also welcome, as they also say something about the working method.</li>
+<li>In a possible subsequent interview, we would also use the solution as a basis for discussion.</li>
 </ul>
-</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:task"><span>Task</span></a><ul><li><a href="#md:getting-started"><span>Getting <wbr/>Started</span></a></li><li><ul><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li></ul></li></ul><a href="#md:✔️-pre-requisites"><span>✔️ <wbr/>Pre-<wbr/>requisites</span></a><a href="#md:features"><span>Features:</span></a><ul><li><ul><li><a href="#md:use-cases-to-be-covered"><span>Use cases to be covered</span></a></li></ul></li></ul><a href="#md:setup-and-usage"><span>Setup and <wbr/>Usage</span></a><ul><li><a href="#md:🔨-running-code"><span>🔨 <wbr/>Running <wbr/>Code</span></a></li><li><a href="#md:pages"><span>Pages</span></a></li><li><a href="#md:directory-hierarchy-"><span>Directory <wbr/>Hierarchy </span></a></li><li><a href="#md:author"><span>Author</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>web-based-editor - v0.1.0</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><ul><li><ul><li><a href="#md:einleitung"><span>Einleitung</span></a></li><li><a href="#md:zur-verfügung-gestellt-werden"><span>Zur <wbr/>Verfügung gestellt werden</span></a></li><li><a href="#md:workflow-des-users"><span>Workflow des <wbr/>Users</span></a></li><li><a href="#md:abzudeckende-use-cases"><span>Abzudeckende <wbr/>Use-<wbr/>Cases</span></a></li><li><a href="#md:randbedingungen"><span>Randbedingungen</span></a></li><li><a href="#md:deliverables"><span>Deliverables</span></a></li><li><a href="#md:bewertung"><span>Bewertung</span></a></li></ul></li></ul><a href="#md:english-version"><span>English <wbr/>Version</span></a><ul><li><a href="#md:introduction"><span>Introduction</span></a></li><li><a href="#md:the-following-are-provided"><span>The following are provided</span></a></li><li><a href="#md:workflow-of-the-user"><span>Workflow of the user</span></a></li><li><a href="#md:use-cases-to-be-covered"><span>Use cases to be covered</span></a></li><li><a href="#md:boundary-conditions"><span>Boundary conditions</span></a></li><li><a href="#md:deliverables-1"><span>Deliverables</span></a></li><li><a href="#md:evaluation"><span>Evaluation</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>web-based-editor - v0.1.0</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

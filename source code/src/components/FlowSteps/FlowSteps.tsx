@@ -13,7 +13,10 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import styled from "styled-components";
 import { useAppSelector, useAppDispatch } from "../../store";
-import { updateNodePosition } from "../../features/sequanceSlice";
+import {
+  clearSequence,
+  updateNodePosition,
+} from "../../features/sequenceSlice";
 import { Button } from "react-bootstrap";
 import { showModal } from "../../features/appSlice";
 import { NodeCard } from "../Cards/NodeCard";
@@ -64,8 +67,7 @@ export function FlowSteps(): React.ReactElement | null {
   // Render a button to create the first function if there's only one node (Done)
   if (nodes.length === 1)
     return (
-      <StyledStartSection>
-        Your Program
+      <ActionSection>
         <br />
         <Button
           onClick={() =>
@@ -78,25 +80,31 @@ export function FlowSteps(): React.ReactElement | null {
         >
           Create First Function
         </Button>
-      </StyledStartSection>
+      </ActionSection>
     );
   return (
-    <ReactFlowProvider>
-      <Viewer>
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onConnect={onConnect}
-          onNodesChange={onNodesChange}
-          nodeTypes={nodeTypes}
-          style={{ background: `#181A1B` }}
-        >
-          <MiniMap />
-          <Controls />
-          <Background />
-        </ReactFlow>
-      </Viewer>
-    </ReactFlowProvider>
+    <>
+      <ActionSection>
+        <Button onClick={() => dispatch(clearSequence())}>New Sequence</Button>
+      </ActionSection>
+
+      <ReactFlowProvider>
+        <Viewer>
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onConnect={onConnect}
+            onNodesChange={onNodesChange}
+            nodeTypes={nodeTypes}
+            style={{ background: `#181A1B` }}
+          >
+            <MiniMap />
+            <Controls />
+            <Background />
+          </ReactFlow>
+        </Viewer>
+      </ReactFlowProvider>
+    </>
   );
 }
 
@@ -104,8 +112,7 @@ const Viewer = styled.div`
   width: 100%;
   height: 90vh;
 `;
-const StyledStartSection = styled.div`
-  width: 100%;
-  height: 300px;
-  display: flex;
+
+const ActionSection = styled.div`
+  margin: 20px 0px;
 `;

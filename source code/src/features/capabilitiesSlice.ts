@@ -22,9 +22,13 @@ const capabilitiesSlice = createSlice({
     ) => {
       state.capabilities = action.payload;
     },
+    clearCapabilities: (state) => {
+      state.capabilities = {};
+    },
   },
 });
 
-export const { initializeCapabilities } = capabilitiesSlice.actions;
+export const { initializeCapabilities, clearCapabilities } =
+  capabilitiesSlice.actions;
 
 export default capabilitiesSlice.reducer;

@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { setSequence } from "../../features/sequanceSlice";
+import { setSequence } from "../../features/sequenceSlice";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { H1 } from "../commun/Typography";
 import UploadImage from "../../assets/images/undraw_file_sync_re_0pcx.svg";
 import { Image } from "../commun/Image";
-import { isEmpty } from "../../utils/valiation";
+import { isEmpty, validateSequence } from "../../utils/valiation";
 
 import { InitSequence } from "./InitSequence";
 import { InitMachineCapabilities } from "./InitMachineCapabilities";
@@ -25,7 +25,14 @@ export const InitProgram: React.FC = (): React.ReactElement | null => {
   const dispatch = useAppDispatch();
 
   const handleSetSequenceFromFile = (sequence: Sequence) => {
-    dispatch(setSequence(JSON.parse(JSON.stringify(sequence))));
+    // Validate data
+    // To avoid uploading any incorrect file,
+    // it should match the type of Sequence
+    if (!validateSequence(sequence)) {
+      alert("Invalid data structure");
+      return;
+    }
+    dispatch(setSequence(sequence));
   };
 
   if (sequence.Steps.length > 0) return null;

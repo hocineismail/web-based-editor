@@ -6,7 +6,7 @@ export * from "./InitProgram/InitMachineCapabilities";
 export * from "./InitProgram/InitProgram";
 export * from "./InitProgram/InitSequence";
 export * from "./SaveFile/SaveFile";
-export * from "./Step/NextStep";
+export * from "./Step/StepEditor";
 export * from "./fileReader/FileReader";
 export * from "./commun/Box";
 export * from "./commun/Divider";

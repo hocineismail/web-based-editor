@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import sequenceSlice from "./features/sequanceSlice";
+import sequenceSlice from "./features/sequenceSlice";
 import capabilitiesSlice from "./features/capabilitiesSlice";
 import appSlice from "./features/appSlice";
 
@@ -9,7 +9,6 @@ export const store = configureStore({
     sequence: sequenceSlice,
     capabilities: capabilitiesSlice,
     app: appSlice,
- 
   },
 });
 

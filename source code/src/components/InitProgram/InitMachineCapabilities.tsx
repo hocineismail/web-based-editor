@@ -6,6 +6,7 @@ import { H3 } from "../commun/Typography";
 import { FileReaderComponent } from "../fileReader/FileReader";
 import MachineCapabilitiesJSON from "../Demo/MachineCapabilities_Assessment.json";
 import { MachineCapabilities } from "../../types";
+import { validateMachineCapabilities } from "../../utils/valiation";
 
 /**
  * Component to initialize machine capabilities.
@@ -16,6 +17,14 @@ export function InitMachineCapabilities() {
 
   const handleInitCapabilites = useCallback(
     (capabilities: MachineCapabilities) => {
+      // Validate data
+      // To avoid uploading any incorrect file,
+      // it should match the type of MachineCapabilities
+      if (!validateMachineCapabilities(capabilities)) {
+        alert("Invalid data structure");
+        return;
+      }
+
       dispatch(initializeCapabilities(capabilities));
     },
     [dispatch]
